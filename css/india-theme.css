@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #faf9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #ff9933, #ffffff, #138808);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000080;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff9933;
+}
+
+/* Fixed Navbar Styling */
+:root {
+  --saffron: #FF9933;
+  --white: #FFFFFF;
+  --green: #138808;
+  --navy-blue: #000080;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
+  color: var(--navy-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add top padding to body so content doesn't hide under fixed navbar */
+body {
+  padding-top: 80px; /* Adjust this based on navbar height */
+}
+
+/* Hero Section with Video */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 1;
+  filter: brightness(0.9);
+  animation: fadeIn 2s ease-in forwards;
+}
+
+/* Overlay for smooth text visibility */
+.hero-text {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Smooth fade-in animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #138808;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0c5c05;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff; /* Ensure sections have a background */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Box shadow to create depth */
+  margin: 20px 0; /* Space between sections */
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff9933;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-left: 4px solid #138808;
+  border-radius: 10px;
+  width: 300px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  color: #000080;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+/* Travel Tips */
+.travel-tips ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.travel-tips li {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.travel-tips li::before {
+  content: '🇮🇳';
+  position: absolute;
+  left: 0;
+}
+
+/* About & Contact Section */
+.about-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+}
+
+.about, .contact-cta {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Footer */
+footer {
+  background-color: #000080;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* Keyframes */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(19, 136, 8, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(19, 136, 8, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(19, 136, 8, 0);
+  }
+}
+
+/* Logo Animation */
+.logo {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.08);
+  animation: pulseRing 1s infinite;
+}
+
+/* Nav Links Animation */
+.nav-links a {
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: var(--green);
+  transition: width 0.3s ease;
+  animation: none;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  animation: expandLine 0.3s ease-out forwards;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+/* State Card Animation */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  animation: floatUp 0.6s ease-in-out forwards;
+  border-left-color: var(--saffron);
+}
+
+.card:hover h3 {
+  color: var(--saffron);
+  transition: color 0.3s ease;
+}
+
+.card img {
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05) contrast(1.05);
+}
+
+/* Ensure all sections have box shadow */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff; /* Ensure sections have a background */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  margin: 20px 0; /* Space between sections */
+}

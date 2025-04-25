@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf9f9;
+  color: #222;
+  line-height: 1.6;
+  padding-top: 80px; /* Adjusted for fixed navbar */
+}
+
+/* Root Variables */
+:root {
+  --saffron: #FF9933;
+  --white: #FFFFFF;
+  --green: #138808;
+  --navy-blue: #000080;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, var(--saffron), var(--white), var(--green));
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Animation */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--navy-blue);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(19, 136, 8, 0.3);
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--navy-blue);
+  padding-bottom: 4px;
+  transition: color 0.4s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: var(--green);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://source.unsplash.com/1600x400/?india,culture') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* About Content */
+.about-content {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-content h2 {
+  color: var(--navy-blue);
+  margin-top: 2rem;
+}
+
+.about-content p,
+.about-content ul {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* Suggest a Travel Destination Container */
+.container {
+  max-width: 800px;
+  margin: 40px auto; /* Adjusted margin for spacing */
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s;
+}
+
+/* Animation for Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Input Section Styling */
+.input-section {
+  display: flex;
+  flex-direction: column; /* Stacks inputs vertically */
+  gap: 10px; /* Space between inputs */
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.4s;
+}
+
+.input-section input:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 5px var(--green);
+}
+
+.input-section button {
+  padding: 12px 20px;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.input-section button:hover {
+  background: #116b02;
+  transform: scale(1.05);
+}
+
+/* Suggestion List */
+#suggestionList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#suggestionList li {
+  background-color: #f0f8ff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  transform: translateY(20px);
+  animation: slideIn 0.3s forwards;
+}
+
+/* Animation for Slide In */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy-blue);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
